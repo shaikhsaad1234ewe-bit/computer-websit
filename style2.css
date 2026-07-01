@@ -1,0 +1,740 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* Smooth Scrolling aur global behavior */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  background: #181616;
+}
+
+/* ==========================================================================
+   ADVANCED CYBERPUNK / GAMING KEYFRAMES
+   ========================================================================== */
+@keyframes neonPulse {
+  0% { text-shadow: 0 0 5px rgba(200, 20, 255, 0.5), 0 0 10px rgba(200, 20, 255, 0.3); }
+  50% { text-shadow: 0 0 20px rgba(69, 243, 255, 0.8), 0 0 30px rgba(69, 243, 255, 0.5); }
+  100% { text-shadow: 0 0 5px rgba(200, 20, 255, 0.5), 0 0 10px rgba(200, 20, 255, 0.3); }
+}
+
+@keyframes cinematicReveal {
+  0% { transform: scale(0.95) translateY(40px); opacity: 0; filter: blur(5px); }
+  100% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0); }
+}
+
+@keyframes headerDrop {
+  0% { transform: translateY(-100%) cubic-bezier(0.19, 1, 0.22, 1); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes textGlitchReveal {
+  0% { transform: translateX(-50px); opacity: 0; clip-path: inset(40% 0 61% 0); }
+  20% { opacity: 0.5; clip-path: inset(92% 0 1% 0); }
+  40% { transform: translateX(10px); clip-path: inset(15% 0 80% 0); }
+  60% { opacity: 0.8; transform: translateX(-5px); clip-path: inset(80% 0 5% 0); }
+  100% { transform: translateX(0); opacity: 1; clip-path: inset(0 0 0 0); }
+}
+
+/* General Scroll Entrance Effect for modern support */
+@keyframes scrollEntry {
+  from { opacity: 0; transform: translateY(60px) scale(0.96); filter: brightness(0.5) blur(4px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: brightness(1) blur(0); }
+}
+
+/* ==========================================================================
+   ELEMENT STYLING WITH INTERACTIVE RESPONSES
+   ========================================================================== */
+.contaner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  animation: headerDrop 1.2s cubic-bezier(0.19, 1, 0.22, 1) both;
+  background: rgba(24, 22, 22, 0.4);
+  backdrop-filter: blur(10px); /* Premium Header Glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contaner h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 40px;
+  color: white;
+  transition: all 0.3s;
+}
+.contaner h1:hover {
+  animation: neonPulse 1.5s infinite;
+}
+
+.navbar {
+  width: 60%;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+.navbar ul li a {
+  margin: 30px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Dynamic cyan line beneath active links */
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: 50%;
+  background-color: #45f3ff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+.navbar ul li a:hover {
+  color: #45f3ff;
+  text-shadow: 0 0 10px #45f3ff;
+}
+
+.navbar-icon {
+  display: flex;
+  align-items: center;
+}
+.navbar-icon a {
+  color: white;
+  font-size: 20px;
+  margin-left: 20px; 
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.navbar-icon a:hover {
+  color: #45f3ff;
+  transform: translateY(-4px) scale(1.2);
+  filter: drop-shadow(0 0 8px #45f3ff);
+}
+
+/*banner-1*/
+.banner {
+  width: 100%;
+  height: 100vh;
+  background: url("banner-1.png");
+  position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.banner-text {
+  width: 45%;
+  padding: 10px 20px;
+  margin-left: 200px;
+  animation: textGlitchReveal 1.4s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.banner-text h1 {
+  font-size: 70px;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 10px;
+}
+.banner-text h2 {
+  font-size: 80px;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  animation: neonPulse 3s infinite ease-in-out; /* Continuous glowing title */
+}
+.banner-text p {
+  font-size: 50px;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.banner-text button {
+  padding: 20px 50px;
+  border-radius: 10px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border: none;
+  margin-top: 20px;
+  font-size: 15px;
+  color: white;
+  background: purple;
+  box-shadow: 0 0 0 rgba(200, 20, 255, 0);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.banner-text button:hover {
+  background: #000;
+  color: #45f3ff;
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 0 12px 25px rgba(69, 243, 255, 0.4);
+}
+#close{
+    display:none;
+}
+#mobil{
+    display: none;
+}
+/*---------Section card----------*/
+.card-1{
+    width: 100%;
+    display: flex;
+    padding: 10px 20px;
+    gap:30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background:#222;
+      animation: cinematicReveal 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.5s both;
+}
+.card-image{
+    margin-top: 50px;
+     width:30%;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px 20px;
+  box-shadow: 0px 0px 10px gray;
+  transition: all 0.3s ease;
+}
+.card-image:hover{
+    transform: translateY(-20px);
+    box-shadow: 0px 0px 10px white;
+}
+.card-image img{
+    width: 100%;
+    object-fit: cover;
+    height: 50vh;
+    align-items: center;
+    border-radius: 20px;
+}
+.card-image h1{
+    text-align: center;
+    color:rgb(0, 255, 179);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-top: 10px;
+    font-size:35px;
+}
+.card-image p{
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    margin-top: 10px;
+}
+.rating{
+    color: gold;
+    margin: 20px;
+    font-size: 20px;
+}
+.card-image h3{
+    text-align:left;
+    font-size: 20px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card-image button{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border:none;
+    border-radius: 10px 20px;
+    background:rgb(173, 3, 173);
+    box-shadow: 0px 0px 10px gray;
+}
+.card-image a{
+    text-decoration: none;
+    font-size:18px ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: white;
+}
+.card-image button:hover{
+    background:black;
+}
+
+
+/* ==========================================================================
+   MAIN FOOTER SECTION WITH PREMIUM ANIMATIONS
+   ========================================================================== */
+.main-footer {
+    width: 100%;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    padding: 70px 5% 20px 5%;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+.brand-col p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    max-width: 300px;
+}
+
+/* Footer Logo Glowing Aura Effect */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
+}
+
+.footer-logo:hover img {
+    transform: rotate(360deg); /* Smooth 360-degree rotation on hover */
+    box-shadow: 0 0 20px purple, 0 0 30px rgba(255, 204, 0, 0.4);
+}
+
+.footer-logo h2 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.footer-logo:hover h2 {
+    color:purple;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+/* Premium Social Icons Animation */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-socials a {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy feel */
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-socials a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:purple;
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.footer-socials a:hover::before {
+    transform: scale(1); /* Smooth circular expand background */
+}
+
+.footer-socials a:hover {
+    color: #111;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.4);
+    border-color: purple;
+}
+
+.footer-col h3 {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color:purple;
+    margin-bottom: 20px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Heading bottom line animation */
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color:purple;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.footer-col:hover h3::after {
+    width: 60px; /* Line expands on section hover */
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+    perspective: 1000px;
+}
+
+/* Interactive Slide & Indicator Effect for Links */
+.footer-col ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-block;
+    position: relative;
+}
+
+.footer-col ul li a::before {
+    content: '▶';
+    position: absolute;
+    left: -15px;
+    opacity: 0;
+    color:purple;
+    font-size: 10px;
+    transition: all 0.3s ease;
+    transform: translateX(-5px);
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 12px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.footer-col ul li a:hover::before {
+    opacity: 1;
+    transform: translateX(0); /* Arrow pops out from left */
+}
+
+/* Contact Info Glowing Icons */
+.contact-col p {
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-col p:hover {
+    transform: translateX(4px);
+    color: #ffffff;
+}
+
+.contact-col p i {
+    color:white;
+    font-size: 14px;
+    width: 15px;
+    transition: filter 0.3s ease;
+}
+
+.contact-col p:hover i {
+    filter: drop-shadow(0 0 5px #ffcc00); /* Neon glow on icons */
+}
+
+.footer-bottom {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #666666;
+    transition: color 0.5s ease;
+}
+
+.main-footer:hover .footer-bottom p {
+    color: #999999; /* Text brightens slightly when user reads footer */
+}
+
+/* ==========================================================================
+   SCROLL DRIVEN TRIGGER FOR THE WHOLE FOOTER
+   ========================================================================== */
+@supports (animation-timeline: view()) {
+  .main-footer {
+    animation: footerReveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 15%;
+  }
+}
+
+@keyframes footerReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* ==========================================================================
+   PURE CSS SCROLL DRIVEN REVEAL SYSTEM
+   ========================================================================== */
+@supports (animation-timeline: view()) {
+  .card2-image, .card-image-2, .contaner-image, .cpu-img, 
+  .section-contaner-2, .section-contaner-3, .card-image-3 {
+    animation: scrollEntry linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 30%;
+  }
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE MEDIA QUERIES (768px)
+   ========================================================================== */
+
+/* عام ڈیسک ٹاپ سکرین پر موبائل مینو کے آئیکنز کو چھپانے کے لیے */
+.navbar .fa-circle-xmark, 
+.contaner > .fa-bars {
+    display: none;
+    cursor: pointer;
+    font-size: 26px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. Header & Navbar Adjustment */
+    .contaner {
+        padding: 15px 20px;
+        border-radius: 15px; /* موبائل پر ریڈیس تھوڑا کم اچھا لگے گا */
+    }
+    
+    .contaner h1 {
+        font-size: 28px; /* لوگو کا سائز چھوٹا کیا */
+    }
+
+    /* موبائل بارز آئیکن کو دکھائیں */
+    .contaner > .fa-bars {
+        display: block;
+        order: 3; /* اسے رائٹ سائیڈ پر رکھنے کے لیے */
+    }
+
+    /* نیوبار کو رائٹ سائیڈ پر سکرین سے باہر چھپا دیں */
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -320px; /* مینو کو سکرین سے باہر (رائٹ سائیڈ) رکھے گا */
+        width: 280px;
+        height: 100vh;
+        background: rgba(15, 15, 15, 0.95); /* ڈارک گلاس ایفیکٹ */
+        backdrop-filter: blur(15px);
+        padding: 80px 30px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
+        transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        z-index: 2000;
+        display: block; /* فلیکس سے بلاک کیا تاکہ لسٹ نیچے آئے */
+    }
+
+    /* جب جاوا سکرپٹ کے ذریعے 'active' کلاس لگے گی تو مینو رائٹ سے نکلے گا */
+    .navbar.active {
+        right: 0; 
+    }
+
+    /* مینو لنکس کو عمودی (Vertical) ترتیب دینا */
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .navbar ul li a {
+        margin: 0;
+        font-size: 22px;
+        display: block;
+        width: 100%;
+    }
+
+    /* بند کرنے والا کراس (X) آئیکن مینو کے اندر ٹاپ رائٹ پر */
+    .navbar .fa-circle-xmark {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        color: #45f3ff;
+    }
+    
+    /* نیوبار کے آئیکنز (سرچ، ہارٹ وغیرہ) کو موبائل پر ایڈجسٹ کرنا */
+    .navbar-icon {
+        order: 2;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+    .navbar-icon a {
+        font-size: 18px;
+        margin-left: 15px;
+    }
+
+    /* 2. Banner Responsive */
+    .banner {
+        height: auto;
+        padding: 120px 20px 60px 20px;
+    }
+    .banner-text {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+    .banner-text h1 { font-size: 40px; }
+    .banner-text h2 { font-size: 45px; }
+    .banner-text p { font-size: 28px; }
+    .banner-text button { width: 100%; padding: 15px 30px; }
+
+    
+.card-1{
+    width: 100%;
+    display: flex;
+    padding: 10px 20px;
+    gap:30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background:#222;
+      animation: cinematicReveal 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.5s both;
+}
+.card-image{
+    margin-top: 50px;
+     width:100%;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px 20px;
+  box-shadow: 0px 0px 10px gray;
+  transition: all 0.3s ease;
+}
+.card-image:hover{
+    transform: translateY(-20px);
+    box-shadow: 0px 0px 10px white;
+}
+.card-image img{
+    width: 100%;
+    object-fit: cover;
+    height: 50vh;
+    align-items: center;
+    border-radius: 20px;
+}
+.card-image h1{
+    text-align: center;
+    color:rgb(0, 255, 179);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-top: 10px;
+    font-size:35px;
+}
+.card-image p{
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    margin-top: 10px;
+}
+.rating{
+    color: gold;
+    margin: 20px;
+    font-size: 20px;
+}
+.card-image h3{
+    text-align:left;
+    font-size: 20px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card-image button{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border:none;
+    border-radius: 10px 20px;
+    background:rgb(173, 3, 173);
+    box-shadow: 0px 0px 10px gray;
+}
+.card-image a{
+    text-decoration: none;
+    font-size:18px ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: white;
+}
+.card-image button:hover{
+    background:black;
+}
+
+    /* 6. Footer Layout */
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-col {
+        width: 100%;
+        text-align: center;
+    }
+    .footer-logo {
+        justify-content: center;
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .contact-col p {
+        justify-content: center;
+    }
+}
